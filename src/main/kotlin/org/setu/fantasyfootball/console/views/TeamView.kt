@@ -1,7 +1,7 @@
 package org.setu.fantasyfootball.console.views
 
+import org.setu.fantasyfootball.console.models.TeamJsonStore
 import org.setu.fantasyfootball.console.models.TeamModel
-import org.setu.fantasyfootball.console.models.TeamMemStore
 
 class TeamView {
 
@@ -27,7 +27,7 @@ class TeamView {
         return option
     }
 
-    fun listTeams(teams : TeamMemStore){
+    fun listTeams(teams: TeamJsonStore){
         println("List All Teams")
         println()
         teams.logAll()

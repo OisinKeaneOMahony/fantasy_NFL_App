@@ -1,17 +1,15 @@
 package org.setu.fantasyfootball.console.controllers
 
 import mu.KotlinLogging
-import org.setu.fantasyfootball.console.main.*
 import org.setu.fantasyfootball.console.models.TeamModel
-import org.setu.fantasyfootball.console.models.TeamMemStore
-import org.setu.fantasyfootball.console.models.PlayerModel
 import org.setu.fantasyfootball.console.models.PlayerMemStore
 import org.setu.fantasyfootball.console.views.TeamView
 import org.setu.fantasyfootball.console.views.PlayerView
+import org.setu.fantasyfootball.console.models.TeamJsonStore
 
 class Controller {
     val logger = KotlinLogging.logger{}
-    val teams = TeamMemStore()
+    val teams = TeamJsonStore()
     val players = PlayerMemStore()
     val teamView = TeamView()
     val playerView = PlayerView()
