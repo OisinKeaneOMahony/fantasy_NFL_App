@@ -79,9 +79,19 @@ class Controller {
     fun deleteTeam(){
         listTeams()
         print("Enter Id to Delete")
-        var index = readln()!!
+        var input = readln()!!
 
-        teams.delete(teams.teams.get(index.toInt()))
+        try {
+            val index = input.toLong()
+            val teamToDelete = teams.teams.find { it.id == index }
+            if (teamToDelete != null) {
+                teams.delete(teamToDelete)
+            } else {
+                println("ID not found.")
+            }
+        } catch (e: NumberFormatException) {
+            println("Please enter a valid ID.")
+        }
     }
 
     fun updateTeam(){
